@@ -98,6 +98,30 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "VaultAuth")
 		os.Exit(1)
 	}
+	if err = (&controllers.SSHRoleReconciler{
+		Client: mgr.GetClient(),
+		Log:    ctrl.Log.WithName("controllers").WithName("SSHRole"),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "SSHRole")
+		os.Exit(1)
+	}
+	if err = (&controllers.PKIRoleReconciler{
+		Client: mgr.GetClient(),
+		Log:    ctrl.Log.WithName("controllers").WithName("PKIRole"),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "PKIRole")
+		os.Exit(1)
+	}
+	if err = (&controllers.JWTRoleReconciler{
+		Client: mgr.GetClient(),
+		Log:    ctrl.Log.WithName("controllers").WithName("JWTRole"),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "JWTRole")
+		os.Exit(1)
+	}
 	// +kubebuilder:scaffold:builder
 
 	setupLog.Info("starting manager")

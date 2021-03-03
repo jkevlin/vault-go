@@ -13,4 +13,13 @@ resources:
 - group: vault
   kind: VaultAuth
   version: v1
+- group: vault
+  kind: SSHRole
+  version: v1
+- group: vault
+  kind: PKIRole
+  version: v1
+- group: vault
+  kind: JWTRole
+  version: v1
 version: "2"
