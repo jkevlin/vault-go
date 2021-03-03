@@ -10,4 +10,7 @@ resources:
 - group: vault
   kind: VaultRole
   version: v1
+- group: vault
+  kind: VaultAuth
+  version: v1
 version: "2"

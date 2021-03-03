@@ -90,6 +90,14 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "VaultRole")
 		os.Exit(1)
 	}
+	if err = (&controllers.VaultAuthReconciler{
+		Client: mgr.GetClient(),
+		Log:    ctrl.Log.WithName("controllers").WithName("VaultAuth"),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "VaultAuth")
+		os.Exit(1)
+	}
 	// +kubebuilder:scaffold:builder
 
 	setupLog.Info("starting manager")
