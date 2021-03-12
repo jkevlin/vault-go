@@ -122,6 +122,14 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "JWTRole")
 		os.Exit(1)
 	}
+	if err = (&controllers.VaultEndpointReconciler{
+		Client: mgr.GetClient(),
+		Log:    ctrl.Log.WithName("controllers").WithName("VaultEndpoint"),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "VaultEndpoint")
+		os.Exit(1)
+	}
 	// +kubebuilder:scaffold:builder
 
 	setupLog.Info("starting manager")
