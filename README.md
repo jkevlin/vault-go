@@ -6,14 +6,14 @@ All of these types are defined as Kubernetes CRD's. A future implentation will b
 
 ## Types
 
-[JWTRole](api/v1/jwtrole_types.go)
-[PKIRole](api/v1/pkirole_types.go)
-[SSHRole](api/v1/sshrole_types.go)
-[VaultAuth](api/v1/vaultauth_types.go)
-[VaultEndpoint](api/v1/vaultendpoint_types.go)
-[VaultNamespace](api/v1/vaultnamespace_types.go)
-[VaultPolicy](api/v1/vaultpolicy_types.go)
-[VaultRole](api/v1/vaultrole_types.go)
+- [JWTRole](api/v1/jwtrole_types.go)
+- [PKIRole](api/v1/pkirole_types.go)
+- [SSHRole](api/v1/sshrole_types.go)
+- [VaultAuth](api/v1/vaultauth_types.go)
+- [VaultEndpoint](api/v1/vaultendpoint_types.go)
+- [VaultNamespace](api/v1/vaultnamespace_types.go)
+- [VaultPolicy](api/v1/vaultpolicy_types.go)
+- [VaultRole](api/v1/vaultrole_types.go)
 
 example command to add an api
 
