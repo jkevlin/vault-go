@@ -15,6 +15,10 @@ All of these types are defined as Kubernetes CRD's. A future implentation will b
 - [VaultPolicy](api/v1/vaultpolicy_types.go)
 - [VaultRole](api/v1/vaultrole_types.go)
 
+## Apps using vault-go
+
+- [vault-cli](https://github.com/jkevlin/vault-cli)
+
 example command to add an api
 
 ```bash
