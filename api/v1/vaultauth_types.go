@@ -79,7 +79,7 @@ type AuthData struct {
 // '{"type":"approle","description":"","config":{"options":null,"default_lease_ttl":"0s","max_lease_ttl":"0s","force_no_cache":false},"local":false,"seal_wrap":false,"options":null}' http://127.0.0.1:8200/v1/sys/auth/foo
 type VaultAuthSpec struct {
 	Data           AuthData      `json:"data,omitempty" yaml:"data,omitempty"`
-	VaultNamespace string        `json:"VaultNamespace,omitempty" yaml:"VaultNamespace,omitempty"`
+	VaultNamespace string        `json:"vaultNamespace,omitempty" yaml:"vaultNamespace,omitempty"`
 	Path           string        `json:"path,omitempty" yaml:"path,omitempty"`
 	JWTConfig      JWTAuthConfig `json:"jwtConfig,omitempty" yaml:"jwtConfig,omitempty"`
 }
