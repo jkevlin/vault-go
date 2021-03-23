@@ -199,7 +199,7 @@ type PKIConfig struct {
 // VaultEndpointSpec defines the desired state of VaultEndpoint
 type VaultEndpointSpec struct {
 	VaultNamespace string `json:"vaultNamespace,omitempty" yaml:"vaultNamespace,omitempty"`
-	PathTemplate   string `json:"path" yaml:"path"`
+	Path           string `json:"path" yaml:"path"`
 	//AllowedRoles      []string              `json:"allowedRoles" yaml:"allowedRoles"`
 	MountOptions VaultMountOptions     `json:"mountOptions,omitempty" yaml:"mountOptions,omitempty"`
 	TuneOptions  VaultMountTuneOptions `json:"tuneOptions,omitempty" yaml:"tuneOptions,omitempty"`
