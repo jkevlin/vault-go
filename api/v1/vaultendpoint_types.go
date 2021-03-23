@@ -176,16 +176,16 @@ type VaultMountOptions struct {
 }
 
 type IntermediateOptions struct {
-	RootCANamespaceTemplate string                `json:"rootCANamespaceTemplate,omitempty" yaml:"rootCANamespaceTemplate,omitempty"`
-	RootCAPathTemplate      string                `json:"rootCAPathTemplate,omitempty" yaml:"rootCAPathTemplate,omitempty"`
-	GenerateOptions         *VaultGenerateOptions `json:"GenerateOptions,omitempty" yaml:"GenerateOptions,omitempty"`
+	RootCANamespace string                `json:"rootCANamespace,omitempty" yaml:"rootCANamespace,omitempty"`
+	RootCAPath      string                `json:"rootCAPath,omitempty" yaml:"rootCAPath,omitempty"`
+	GenerateOptions *VaultGenerateOptions `json:"generateOptions,omitempty" yaml:"generateOptions,omitempty"`
 }
 type RootOptions struct {
-	GenerateOptions *VaultGenerateOptions `json:"GenerateOptions,omitempty" yaml:"GenerateOptions,omitempty"`
+	GenerateOptions *VaultGenerateOptions `json:"generateOptions,omitempty" yaml:"generateOptions,omitempty"`
 }
 
-// PkiConfig is the pki mount configuration
-type PkiConfig struct {
+// PKIConfig is the pki mount configuration
+type PKIConfig struct {
 	// ExportPrivateKey (bool: false) –
 	// If true, the private key will be returned in the response;
 	// if false the private key will not be returned and cannot be retrieved later.
@@ -198,12 +198,12 @@ type PkiConfig struct {
 
 // VaultEndpointSpec defines the desired state of VaultEndpoint
 type VaultEndpointSpec struct {
-	NamespaceTemplate string `json:"namespaceTemplate,omitempty" yaml:"namespaceTemplate,omitempty"`
-	PathTemplate      string `json:"pathTemplate" yaml:"pathTemplate"`
+	VaultNamespace string `json:"vaultNamespace,omitempty" yaml:"vaultNamespace,omitempty"`
+	PathTemplate   string `json:"path" yaml:"path"`
 	//AllowedRoles      []string              `json:"allowedRoles" yaml:"allowedRoles"`
 	MountOptions VaultMountOptions     `json:"mountOptions,omitempty" yaml:"mountOptions,omitempty"`
 	TuneOptions  VaultMountTuneOptions `json:"tuneOptions,omitempty" yaml:"tuneOptions,omitempty"`
-	PkiConfig    PkiConfig             `json:"pkiConfig,omitempty" yaml:"pkiConfig,omitempty"`
+	PKIConfig    PKIConfig             `json:"pkiConfig,omitempty" yaml:"pkiConfig,omitempty"`
 }
 
 // VaultEndpointStatus defines the observed state of VaultEndpoint
