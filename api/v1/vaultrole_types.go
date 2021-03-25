@@ -11,7 +11,7 @@ type VaultRoleData struct {
 	// k8s only bound_service_account_names (array: <required>) - List of service account names able to access this role. If set to "*" all names are allowed, both this and bound_service_account_namespaces can not be "*".
 	BoundServiceAccountNames []string `json:"boundServiceAccountNames,omitempty" yaml:"boundServiceAccountNames,omitempty" vault:"bound_service_account_names"`
 	// k8s only bound_service_account_namespaces (array: <required>) - List of namespaces allowed to access this role. If set to "*" all namespaces are allowed, both this and bound_service_account_names can not be set to "*".
-	BoundServiceAccountNamespaces []string `json:"boundServiceAccountNamespaces,omitempty" yaml:"boundServiceAccountNames,omitempty" vault:"bound_service_account_namespaces"`
+	BoundServiceAccountNamespaces []string `json:"boundServiceAccountNamespaces,omitempty" yaml:"boundServiceAccountNamespaces,omitempty" vault:"bound_service_account_namespaces"`
 	// bindSecretID: true
 	BindSecretID bool `json:"bindSecretID,omitempty" yaml:"bindSecretID,omitempty" vault:"bind_secret_id,omitempty"`
 	// localSecretIDs: false
